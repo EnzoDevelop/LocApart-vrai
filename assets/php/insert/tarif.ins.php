@@ -5,7 +5,7 @@ require_once("../class/tarif.class.php");
 $nouveauDDTarif = $_POST['dd_tarif'];
 $nouveauDFTarif = $_POST['df_tarif'];
 $nouveauPrixLoc = $_POST['prix_loc'];
-$nouveauIdBien = $_POST['id_bien'];
+$nouveauIdBien = $_POST['id_bien2'];
 
 $oNouveauTarif= new tarif($con);
 

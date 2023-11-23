@@ -13,7 +13,7 @@ $nouveauNBChambre = $_POST['nb_chambre'];
 $nouveauDescriptif = $_POST['descriptif'];
 $nouveauRefBien = $_POST['ref_bien'];
 $nouveauStatutBien = $_POST['statut_bien'];
-$nouveauIdTypeBien = $_POST['id_type_bien'];
+$nouveauIdTypeBien = $_POST['id_type_bien2'];
 
 $oNouveauBien= new bien($con);
 

@@ -11,7 +11,9 @@ require_once("../class/bien.class.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Type de biens - Loc'Appart</title>
+    <title>Biens - Loc'Appart</title>
+    <script type="text/javascript" src="../../js/autocomp/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/autocomp/script.bien.js"></script>
 </head>
 
 <body>
@@ -59,22 +61,23 @@ require_once("../class/bien.class.php");
 
                                 echo "<tr>";
                                 echo "<td>", $row['id_bien'], "</td>";
-                                echo "<td><input type='text' name='$nob' value='", $row['nom_bien'], "'></td>";
-                                echo "<td><input type='text' name='$r' value='", $row['rue_bien'], "'></td>";
-                                echo "<td><input type='text' name='$cp' value='", $row['codeP_bien'], "'></td>";
-                                echo "<td><input type='text' name='$v' value='", $row['vil_bien'], "'></td>";
-                                echo "<td><input type='text' name='$s' value='", $row['sup_bien'], "'></td>";
-                                echo "<td><input type='text' name='$nbco' value='", $row['nb_couchage'], "'></td>";
-                                echo "<td><input type='text' name='$nbp' value='", $row['nb_piece'], "'></td>";
-                                echo "<td><input type='text' name='$nbch' value='", $row['nb_chambre'], "'></td>";
-                                echo "<td><input type='text' name='$d' value='", $row['descriptif'], "'></td>";
-                                echo "<td><input type='text' name='$rb' value='", $row['ref_bien'], "'></td>";
-                                echo "<td><input type='text' name='$sb' value='", $row['statut_bien'], "'></td>";
-                                echo "<td><input type='text' name='$idt' value='", $row['id_type_bien'], "'></td>";
-                                echo "<td><button class='btn btn-primary' name='update' value='", $row['id_bien'], "' type=submit'>Modifier</button>
-                                <button class='btn btn-danger' name='delete' value='", $row['id_bien'], "' type=submit'>Supprimer</button></td>";
-                                
+                                echo "<td><span>", $row['nom_bien'], "</span></td>";
+                                echo "<td><span>", $row['rue_bien'], "</span></td>";
+                                echo "<td><span>", $row['codeP_bien'], "</span></td>";
+                                echo "<td><span>", $row['vil_bien'], "</span></td>";
+                                echo "<td><span>", $row['sup_bien'], "</span></td>";
+                                echo "<td><span>", $row['nb_couchage'], "</span></td>";
+                                echo "<td><span>", $row['nb_piece'], "</span></td>";
+                                echo "<td><span>", $row['nb_chambre'], "</span></td>";
+                                echo "<td><span>", $row['descriptif'], "</span></td>";
+                                echo "<td><span>", $row['ref_bien'], "</span></td>";
+                                echo "<td><span>", $row['statut_bien'], "</span></td>";
+                                echo "<td><span>", $row['id_type_bien'], "</span></td>";
+                                echo "<td><a href='bien.modif.aff.php'><button class='btn btn-primary' name='update' value='", $row['id_bien'], "' type='submit'>Modifier</button>
+                                <button class='btn btn-danger' name='delete' value='", $row['id_bien'], "' type='submit'>Supprimer</button></td>";
+
                                 echo "</tr>";
+
 
                             }
                         } else {
@@ -84,46 +87,7 @@ require_once("../class/bien.class.php");
                     </tbody>
                 </table>
             </form>
-            <form action="../insert/bien.ins.php" method="post" class="formulaire-insertion">
-                <label for="nom_bien" class="formulaire-label">Nom bien : </label>
-                <input type="text" name="nom_bien" id="nom_bien" class="formulaire-input">
-
-                <label for="rue_bien" class="formulaire-label">Rue bien : </label>
-                <input type="text" name="rue_bien" id="rue_bien" class="formulaire-input">
-
-                <label for="codeP_bien" class="formulaire-label">Code Postal bien : </label>
-                <input type="text" name="codeP_bien" id="codeP_bien" class="formulaire-input">
-                
-                <label for="vil_bien" class="formulaire-label">Ville bien : </label>
-                <input type="text" name="vil_bien" id="vil_bien" class="formulaire-input">
-
-                <label for="sup_bien" class="formulaire-label">Superficie bien : </label>
-                <input type="text" name="sup_bien" id="sup_bien" class="formulaire-input">
-
-                <label for="nb_couchage" class="formulaire-label">Nombre de couchage : </label>
-                <input type="text" name="nb_couchage" id="nb_couchage" class="formulaire-input">
-
-                <label for="nb_piece" class="formulaire-label">Nombre de pieces : </label>
-                <input type="text" name="nb_piece" id="nb_piece" class="formulaire-input">
-
-                <label for="nb_chambre" class="formulaire-label">Nombre de chambre : </label>
-                <input type="text" name="nb_chambre" id="nb_chambre" class="formulaire-input">
-
-                <label for="descriptif" class="formulaire-label">Descriptif : </label>
-                <input type="text" name="descriptif" id="descriptif" class="formulaire-input">
-
-                <label for="ref_bien" class="formulaire-label">Reference du bien : </label>
-                <input type="text" name="ref_bien" id="ref_bien" class="formulaire-input">
-
-                <label for="statut_bien" class="formulaire-label">Statut du bien : </label>
-                <input type="text" name="statut_bien" id="statut_bien" class="formulaire-input">
-
-                <label for="id_type_bien" class="formulaire-label">Type de bien : </label>
-                <input type="text" name="id_type_bien" id="id_type_bien" class="formulaire-input">
-
-
-                <input type="submit" value="Ajouter un bien" class="bouton-primaire">
-            </form>
+            <a href="bien.ajout.aff.php"><button class = "bouton-primaire">Ajouter</button></a>
         </section>
     </main>
 </body>

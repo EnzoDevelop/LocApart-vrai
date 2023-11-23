@@ -11,7 +11,9 @@ require_once("../class/tarif.class.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Type de biens - Loc'Appart</title>
+    <title>Tarif de biens - Loc'Appart</title>
+    <script type="text/javascript" src="../../js/autocomp/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/autocomp/script.tarif.js"></script>
 </head>
 
 <body>
@@ -62,17 +64,18 @@ require_once("../class/tarif.class.php");
             </form>
             <form action="../insert/tarif.ins.php" method="post" class="formulaire-insertion">
                 <label for="dd_tarif" class="formulaire-label">Date de debut : </label>
-                <input type="text" name="dd_tarif" id="dd_tarif" class="formulaire-input">
+                <input type="date" name="dd_tarif" id="dd_tarif" class="formulaire-input">
 
                 <label for="df_tarif" class="formulaire-label">Date de fin : </label>
-                <input type="text" name="df_tarif" id="df_tarif" class="formulaire-input">
+                <input type="date" name="df_tarif" id="df_tarif" class="formulaire-input">
 
                 <label for="prix_loc" class="formulaire-label">Prix : </label>
                 <input type="text" name="prix_loc" id="prix_loc" class="formulaire-input">
                 
                 <label for="id_bien" class="formulaire-label">Bien : </label>
-                <input type="text" name="id_bien" id="id_bien" class="formulaire-input">
-
+                <input type="text" name="id_bien" id="id_bien" onkeyup="autocomplet()" class="formulaire-input">
+                <input type="hidden" name="id_bien2" id="id_bien2" class="formulaire-input">
+                <ul id="bien_list_id"> </ul>
 
                 <input type="submit" value="Ajouter un tarif" class="bouton-primaire">
             </form>
