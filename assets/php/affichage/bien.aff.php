@@ -20,7 +20,7 @@ require_once("../class/bien.class.php");
     <?php include("../template/header.html"); ?>
     <main>
         <section class="conteneur" id="tableau_bien">
-            <form action="../traitement/bien.trait.php" method="post">
+         
                 <table class="tableau">
                     <thead class="tableau_entete">
                         <tr>
@@ -59,6 +59,8 @@ require_once("../class/bien.class.php");
                                 $sb = 'statut_bien'.$row['id_bien'];
                                 $idt = 'id_type_bien'.$row['id_bien'];
 
+                                $id = $row['id_bien'];
+
                                 echo "<tr>";
                                 echo "<td>", $row['id_bien'], "</td>";
                                 echo "<td><span>", $row['nom_bien'], "</span></td>";
@@ -73,11 +75,12 @@ require_once("../class/bien.class.php");
                                 echo "<td><span>", $row['ref_bien'], "</span></td>";
                                 echo "<td><span>", $row['statut_bien'], "</span></td>";
                                 echo "<td><span>", $row['id_type_bien'], "</span></td>";
-                                echo "<td><a href='bien.modif.aff.php'><button class='btn btn-primary' name='update' value='", $row['id_bien'], "' type='submit'>Modifier</button>
-                                <button class='btn btn-danger' name='delete' value='", $row['id_bien'], "' type='submit'>Supprimer</button></td>";
-
+                                ?>
+                                <td><button class='btn btn-primary' onclick="javascript:window.location.href = 'bien.modif.aff.php?id=<?php echo $id ?>' "> Modifierxxxx </button> </td>
+                                
+                                <?php    
                                 echo "</tr>";
-
+//javascript:window.href = 'bien.modif.aff.php?id=$id'
 
                             }
                         } else {
@@ -86,7 +89,7 @@ require_once("../class/bien.class.php");
                         ?>
                     </tbody>
                 </table>
-            </form>
+           
             <a href="bien.ajout.aff.php"><button class = "bouton-primaire">Ajouter</button></a>
         </section>
     </main>

@@ -1,7 +1,7 @@
 <?php
 
 
- // puis création de votre requete  dans l'exemple ci dessous on sélectionne les eleves d'une BDDD 
+ // puis création de votre requete  dans l'exemple ci dessous on sélectionne les biens d'une BDD
  
 	include '../include/connexion.inc.php';
 
